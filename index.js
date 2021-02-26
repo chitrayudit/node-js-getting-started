@@ -18,6 +18,5 @@ app.post('/api-post', (req, res) => res.send(funcReturn(req)))
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 function funcReturn(req){
-
   return ({'response':  req.body.queryResult.parameters});
 }
