@@ -13,5 +13,5 @@ const PORT = process.env.PORT || 5000
     app.set('views', path.join(__dirname, 'views'))
     app.set('view engine', 'ejs')
   app.get('/', (req, res) => res.render('pages/index'))
-  app.get('/api', (req,res)) =>res.render('Hello World!')
+  app.get('/api', (req,res) => res.render('Hello World!'))
   app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
