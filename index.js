@@ -14,9 +14,10 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 app.get('/', (req, res) => res.render('pages/index'))
 app.get('/api', (req,res) => res.send('Hello World'))
-app.post('/api-post', (req, res) => res.send(funcReturn()))
+app.post('/api-post', (req, res) => res.send(funcReturn(req)))
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
-function funcReturn(){
-  return ({'some':'text'});
+function funcReturn(req){
+
+  return ({'response':  req.body.queryResult.parameters});
 }
